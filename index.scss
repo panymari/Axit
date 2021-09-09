@@ -1,0 +1,995 @@
+$special-font: "Raleway", Verdana, sans-serif; 
+$main-font: "Open Sans", Arial, sans-serif;
+$font-path: "./assets/fonts";
+$pink: #EC7979;
+$red: #E72424;
+@mixin thin{
+    font-weight: 300;
+} 
+@mixin medium{
+    font-weight: 400;
+}
+@mixin bold{
+    font-weight: 600;
+}
+@mixin extra-bold{
+    font-weight: 700;
+}
+@mixin space-between{
+    display: flex;
+    align-items: center;
+    justify-content: space-between;
+}
+@font-face{
+    font-family: "Raleway";
+    src: url($font-path + "/Raleway-Regular.ttf") format("ttf");
+}
+@font-face {
+    font-family: "Open Sans";
+    src: url($font-path + "/OpenSans-Regular") format("ttf");
+}
+@mixin line{
+    height: 1px;
+    width: 64px;
+    display: inline-block;
+}
+@media screen and (max-width: 768px){
+    .tabs-text, .tabs-title{
+        margin-left: 15px;
+    }
+    .what-blocks, .managers{
+        flex-direction: column;
+    }
+    .adapt{
+        @include space-between; 
+        flex-direction: row-reverse;
+    }
+}
+@media screen and (max-width: 1200px){
+    .pricing-block2{
+        margin-top: 62px;
+    }
+    .pricing-block1,.pricing-block2{
+        margin-left: 80px;
+    }
+    .what-block{
+        margin-right: 20px;
+        margin-bottom: 20px;
+    }
+    .manager{
+        margin-top: 20px;
+    }
+}
+*{
+    margin: 0;
+    box-sizing: border-box;
+    text-decoration: none;
+    body{
+        header{
+            background-color: black;
+            nav{
+                position: relative;
+                padding: {
+                    top: 25px;
+                    bottom: 25px;
+                } 
+                @include space-between;
+                max-width: 1000px;
+                margin-left: 110px;
+               
+               
+                .navigation{
+                  
+                    .navigation-link{
+                        color: white;
+                        opacity: 70%;
+                        font: {
+                            family: $main-font;   
+                            size: 15px; 
+                        }
+                        @include bold;
+                        padding-left: 48px;
+                    }
+                }
+            }
+        }
+        main{
+            .axit{
+                background: {
+                    image: url("./assets/photo/background1.png");
+                    size: cover;
+                    position: center;
+                    repeat: no-repeat;
+                }
+                position: relative;
+                padding: {
+                    top: 108px;
+                    left: 110px;
+                    bottom: 101px;
+                }
+                z-index: 0;
+               
+
+                .cover{
+                    width: 100%;
+                    height: 100%;
+                    position: absolute;
+                    background-color: black;
+                    opacity: 0.55;
+                    top: 0;
+                    left: 0;
+                    right: 0;
+                    z-index: -1;
+                }
+                .all-content{
+                    @include space-between;
+                    max-width: 1000px;
+                    .axit-content{
+                        
+                        .logo{
+                            margin-bottom: 32px;
+                        }
+                        .axit-title{
+                            font: {
+                                size: 36px;
+                                family: $special-font;
+                            }
+                            color: white;   
+                            @include medium;
+                            margin-bottom: 32px;
+                        }
+                        .axit-line{
+                            @include line;
+                            background-color: white;
+                            margin-bottom: 39px;
+                        }
+                        .axit-text{
+                            font: {
+                                family: $main-font;
+                                size: 16px; 
+                            }
+                            @include thin; 
+                            color: white;
+                            opacity: 0.8;
+                        }
+                        .axit-button{
+                            color: white;
+                            background-color: transparent;
+                            border: 1px solid white;
+                            border-radius: 0;
+                            padding: 11px 26px;
+                            font: {
+                                family: $main-font;   
+                                size: 15px;
+                            }
+                            @include bold;
+                            margin-top: 39px;
+                        }
+                    }
+                    .free-trial{
+                        background-color: white;
+                        border-radius: 5%;
+                        width: 370px;
+                        
+                        .free-trial-title{
+                            padding-top: 10px;
+                            text-align: center;
+                            font: {
+                                family: $main-font;
+                                size: 20px;
+                            }   
+                            @include extra-bold;
+                            span{
+                                color: $pink;
+                            }
+                        }
+                        .free-trial-reg{
+                            color: #BDBDBD;
+                            font: {
+                                family: $main-font;
+                                size: 14px;
+                            }
+                            @include medium;
+                            margin-top: 44px;
+                            display: flex;
+                            justify-content: center;
+                            align-items: center;
+                            flex-direction: column;
+                            
+                            input{
+                                color: #BDBDBD;
+                                border: {
+                                    top: none;
+                                    left: none;
+                                    right: none;
+                                    radius: 0;
+                                }
+                                padding-bottom: 16px;
+                                width: 252px;
+                                margin-bottom: 19px;
+                            }
+                        }
+                        .free-trial-button{
+                            background-color: #EC7979;
+                            width: 100%;
+                            border: none;
+                            margin-top: 61px;
+                            border-bottom-left-radius: 15px;
+                            border-bottom-right-radius: 15px;
+                            color: white;
+                            padding: {
+                                top: 15px;
+                                bottom: 15px;
+                            }
+                        }
+                    }
+                }
+            }
+            .social-media{
+                background-color: #F8EFEF;
+                @include space-between;
+                padding: 34px 111px;
+
+                .pink{
+                    
+                    .pink-title{
+                        font: {
+                            family: $main-font;
+                            size: 20px;  
+                        }    
+                        @include extra-bold;
+                    }
+                    .pink-text{
+                        color: #86878B;
+                        font: {
+                            family: $main-font;
+                            size: 14px; 
+                        }    
+                        @include medium; 
+                    }
+                }
+                .networks{
+                    font-size: 42px;
+                    
+                    .networks-icons{
+                        margin-right: 30px;
+                        color: #CCCCCC;
+                    }
+                }
+                
+            }
+            .tabs{
+                @include space-between;
+                max-width: 1100px;
+                margin-left: 100px;
+                
+
+                .tabs-title{
+                    margin: {
+                        top: 126px;
+                        bottom: 58px;
+                    }
+                    font: {
+                        family: $main-font;
+                        size: 20px;
+                    }   
+                    @include extra-bold;                   
+                    text-transform: uppercase;
+                }
+                .tabs-text{
+                    font: {
+                        family: $main-font;
+                        size: 14px; 
+                    }
+                    @include medium; 
+                    color: #86878B;
+                    text-transform: uppercase;
+                    margin-bottom: 89px;
+                }
+                .tabs-all-button{
+                    margin-top: 125px;
+
+                    .tabs-button{
+                        background-color: #333333;
+                        color: white;
+                        font: {
+                            family: $main-font;
+                            size: 15px;
+                        }
+                        @include extra-bold;
+                        padding: 45px 35px;
+                        border-radius: 5%;
+                        text-transform: uppercase;
+                        border: none;
+                        display: flex;
+                        flex-direction: column;
+                        margin-bottom: 10px;
+                        
+                        &:hover{
+                            background-color: #EC7979;
+                        }
+                        
+                    }
+                }
+                .tabs-button-download{
+                    background-color: #EC7979;
+                    color: white;
+                    font: {
+                        family: $main-font;
+                        size: 15px;
+                    }
+                    @include bold;
+                    border: none;
+                    padding: 11px 25px;
+                    border-radius: 0;
+                }
+                .tabs-image{
+                    margin-top: 100px;
+                }
+            }
+            .why-awesome{
+                text-align: center;
+                .why-awesome-main-block-title{
+                    margin-top: 205px;
+                    margin-bottom: 34px;
+                    font: {
+                        family: $special-font;  
+                        size: 36px;
+                    } 
+                    @include medium;
+                    text-transform: uppercase;
+                }
+                .why-awesome-main-block-text{
+                    font: {
+                        family: $main-font;
+                        size: 14px;  
+                    }
+                    @include medium;
+                    color: #86878B;
+                    margin-bottom: 68px;
+                }
+                .line-red{
+                    @include line;
+                    background-color: $red;
+                    margin-bottom: 34px;
+                }
+              
+                .why-awesome-blocks{
+
+                    .why-awesome-block-design{
+                        margin-right: 20px;
+                        display: inline-block;
+                        .lamp-icon{
+                            background: {
+                                image: url("./assets/icons/lamp.svg");
+                                repeat: no-repeat;
+                                position: center;
+                            }
+                            border-radius: 50%;
+                            border: 1px solid $red;
+                            width: 70px;
+                            height: 70px;
+                            display: inline-block;
+                        }
+                        .why-awesome-title{
+                            font: {
+                                family: $main-font;
+                                size: 20px;
+                            }
+                            @include extra-bold;
+                            margin-top: 30px;
+                            margin-bottom: 16px;
+                        }
+                        .why-awesome-text{
+                            font: {
+                                family: $main-font;
+                                size: 14px;
+                            }
+                            margin: {
+                                bottom: 116px
+                            }
+                            @include medium;
+                            width: 350px;
+                        }
+                    }
+                    .why-awesome-block-craft{
+                        display: inline-block;
+                        margin-right: 20px;
+                        .keyboard-icon{
+                            background: {
+                                image: url("./assets/icons/keyboard.svg");
+                                repeat: no-repeat;
+                                position: center;
+                            }
+                            border-radius: 50%;
+                            border: 1px solid $red;
+                            width: 70px;
+                            height: 70px;
+                            display: inline-block;
+                        }
+                        .why-awesome-title{
+                            font: {
+                                family: $main-font;
+                                size: 20px;
+                            }
+                            @include extra-bold;
+                            margin-top: 30px;
+                            margin-bottom: 16px;
+                        }
+                        .why-awesome-text{
+                            font: {
+                                family: $main-font;
+                                size: 14px;
+                            }
+                            margin: {
+                                bottom: 116px
+                            }
+                            @include medium;
+                            width: 350px;
+                        }
+                    }
+                    .why-awesome-block-custom{
+                        display: inline-block;
+                        .light-icon{
+                            background: {
+                                image: url("./assets/icons/light.svg");
+                                repeat: no-repeat;
+                                position: center;
+                            }
+                            border-radius: 50%;
+                            border: 1px solid $red;
+                            width: 70px;
+                            height: 70px;
+                            display: inline-block;
+                        }
+                        .why-awesome-title{
+                            font: {
+                                family: $main-font;
+                                size: 20px;
+                            }
+                            @include extra-bold;
+                            margin-top: 30px;
+                            margin-bottom: 16px;
+                        }
+                        .why-awesome-text{
+                            font: {
+                                family: $main-font;
+                                size: 14px;
+                            }
+                            margin: {
+                                bottom: 116px
+                            }
+                            @include medium;
+                            width: 350px;
+                        }
+                    }
+                }
+            }
+            .pricing{
+                text-align: center; 
+                background-color: #F5F5F5;
+                padding: {
+                    top: 80px;
+                    bottom: 60px;
+                }
+
+                .pricing-title{
+                    font: {
+                        family: $special-font;
+                        size: 36px;
+                    }
+                    @include medium();
+                    margin-bottom: 34px;
+                    text-transform: uppercase;
+                }
+                .line-red{
+                    @include line;
+                    background-color: $red;
+                    margin-bottom: 34px;
+                }
+                .pricing-text{
+                    font: {
+                        family: $main-font;
+                        size: 14px;
+                    }
+                    @include medium;
+                    color: #86878B;
+                }
+                .pricing-blocks{
+                    display: flex;
+                    align-items: center;
+                    flex-wrap: wrap;
+                    justify-content: center;
+
+                    .pricing-block1{
+                        margin-top: 62px;
+                        margin-right: 80px;
+                        .basic{
+                            background-color: #333333;
+                            font: {
+                                family: $main-font;
+                                size: 20px;
+                            }
+                            @include extra-bold;
+                            padding: {
+                                top: 10px;
+                                bottom: 10px;
+                            }
+                            width: 340px;
+                            color: white;
+                            display: flex;
+                            align-items: center;
+                            justify-content: center;
+                            margin-bottom: 1px;
+                        }
+                        .dollar{
+                            background-color: #333333;
+                            font: {
+                                family: $special-font;
+                                size: 35px;
+                            }
+                            @include extra-bold;
+                            padding: {
+                                top: 20px;
+                                bottom: 20px;
+                            }
+                            width: 340px;
+                            color: white;
+                            display: flex;
+                            align-items: center;
+                            justify-content: center;
+                            margin-bottom: 2px;
+                        }
+                        .free{
+                            background-color: #333333;
+                            font: {
+                                family: $main-font;
+                                size: 14px;
+                            }
+                            @include extra-bold;
+                            padding: {
+                                top: 10px;
+                                bottom: 10px;
+                            }
+                            width: 340px;
+                            color: white;
+                            opacity: 50%;
+                            display: flex;
+                            align-items: center;
+                            justify-content: center;
+                            margin-bottom: 3px;
+                        }
+                        .gb{
+                            background-color: white;
+                            font: {
+                                family: $main-font;
+                                size: 14px;
+                            }
+                            @include medium();
+                            padding: {
+                                top: 8px;
+                                bottom: 8px;
+                            }
+                            width: 340px;
+                            color: #86878B;
+                            display: flex;
+                            align-items: center;
+                            justify-content: center;
+                            margin-bottom: 4px;
+                        }
+                    }
+                    .pricing-block2{
+                        margin-right: 80px;
+                        .basic{
+                            background-color: #333333;
+                            font: {
+                                family: $main-font;
+                                size: 20px;
+                            }
+                            @include extra-bold;
+                            padding: {
+                                top: 10px;
+                                bottom: 10px;
+                            }
+                            width: 340px;
+                            color: white;
+                            display: flex;
+                            align-items: center;
+                            justify-content: center;
+                            margin-bottom: 1px;
+                        }
+                        .dollar{
+                            background-color: #333333;
+                            font: {
+                                family: $special-font;
+                                size: 35px;
+                            }
+                            @include extra-bold;
+                            padding: {
+                                top: 20px;
+                                bottom: 20px;
+                            }
+                            width: 340px;
+                            color: white;
+                            display: flex;
+                            align-items: center;
+                            justify-content: center;
+                            margin-bottom: 2px;
+                        }
+                        .free{
+                            background-color: #333333;
+                            font: {
+                                family: $main-font;
+                                size: 14px;
+                            }
+                            @include extra-bold;
+                            padding: {
+                                top: 10px;
+                                bottom: 10px;
+                            }
+                            width: 340px;
+                            color: white;
+                            opacity: 50%;
+                            display: flex;
+                            align-items: center;
+                            justify-content: center;
+                            margin-bottom: 3px;
+                        }
+                        .gb{
+                            background-color: white;
+                            font: {
+                                family: $main-font;
+                                size: 14px;
+                            }
+                            @include medium();
+                            padding: {
+                                top: 8px;
+                                bottom: 8px;
+                            }
+                            width: 340px;
+                            color: #86878B;
+                            display: flex;
+                            align-items: center;
+                            justify-content: center;
+                            margin-bottom: 4px;
+                        }
+                    }
+                    .pricing-block3{
+                        margin-top: 62px;
+                        .basic{
+                            background-color: #333333;
+                            font: {
+                                family: $main-font;
+                                size: 20px;
+                            }
+                            @include extra-bold;
+                            padding: {
+                                top: 10px;
+                                bottom: 10px;
+                            }
+                            width: 340px;
+                            color: white;
+                            display: flex;
+                            align-items: center;
+                            justify-content: center;
+                            margin-bottom: 1px;
+                        }
+                        .dollar{
+                            background-color: #333333;
+                            font: {
+                                family: $special-font;
+                                size: 35px;
+                            }
+                            @include extra-bold;
+                            padding: {
+                                top: 20px;
+                                bottom: 20px;
+                            }
+                            width: 340px;
+                            color: white;
+                            display: flex;
+                            align-items: center;
+                            justify-content: center;
+                            margin-bottom: 2px;
+                        }
+                        .free{
+                            background-color: #333333;
+                            font: {
+                                family: $main-font;
+                                size: 14px;
+                            }
+                            @include extra-bold;
+                            padding: {
+                                top: 10px;
+                                bottom: 10px;
+                            }
+                            width: 340px;
+                            color: white;
+                            opacity: 50%;
+                            display: flex;
+                            align-items: center;
+                            justify-content: center;
+                            margin-bottom: 3px;
+                        }
+                        .gb{
+                            background-color: white;
+                            font: {
+                                family: $main-font;
+                                size: 14px;
+                            }
+                            @include medium();
+                            padding: {
+                                top: 8px;
+                                bottom: 8px;
+                            }
+                            width: 340px;
+                            color: #86878B;
+                            display: flex;
+                            align-items: center;
+                            justify-content: center;
+                            margin-bottom: 4px;
+                        }
+                    }
+                }
+            }
+            .what{
+                margin-top: 80px;
+                text-align: center;
+                .what-title{
+                    font: {
+                        family: $special-font;
+                        size: 36px;
+                    }
+                    @include medium;
+                    margin-bottom: 34px;
+                    text-transform: uppercase;
+                }
+                .line-red{
+                    @include line;
+                    background-color: $red;
+                    margin-bottom: 34px;
+                }
+                .what-text{
+                    font: {
+                        family: $main-font;
+                        size: 14px;
+                    }
+                    @include medium;
+                    color: #86878B;
+                }
+                .what-blocks{
+                    @include space-between;
+                    margin: {
+                        top:67px;
+                        left:80px;
+                    }
+                    max-width: 1100px;
+                    .what-block{
+                        color: #86878B;
+                        width: 298px;
+                        background-color: #E2E2E2;
+                        font: {
+                            family: $main-font;
+                            size: 14px;
+                        }
+                        @include medium;
+                        border-radius: 5%;
+                        padding: 10px 15px;
+                    }
+                }
+                .managers{
+                    @include space-between;
+                    margin: {
+                        top: 25px;
+                        left: 130px;
+                        right: 130px;
+                    }
+                    .manager{
+                        display: flex;
+                        flex-direction: row-reverse;
+                        .info{
+                            margin-left: 45px;
+                            text-align: right;
+                            .name{
+                                font: {
+                                    family: $main-font;
+                                    size: 20px;
+                                }
+                                @include extra-bold;
+                            }
+                            .job{
+                                margin-top: 12px;
+                                font: {
+                                    family: $main-font;
+                                    size: 14px;
+                                }
+                                @include medium;
+                                color: #86878B;
+                            }
+                        }
+                        .photo{
+                            background-image: url("./assets/photo/manager.png");
+                            border-radius: 50%;
+                            width: 70px;
+                            height: 70px;
+                        }
+                    }
+                }
+
+            }
+            .stylish{
+                background: {
+                    image: url("./assets/photo/background.png");
+                    position: center;
+                    size: cover;
+                    repeat: no-repeat;
+                }
+                position: relative;
+                padding: {
+                    top: 58px;
+                    bottom: 38px;
+                }
+                z-index: 0;
+                text-align: center;
+                margin-top: 120px;
+
+                .cover{
+                    width: 100%;
+                    height: 100%;
+                    position: absolute;
+                    background-color: black;
+                    opacity: 0.55;
+                    top: 0;
+                    z-index: -1;
+                }
+                .main-block-title{
+                    font: {
+                        family: $special-font;
+                        size: 36px;
+                    }
+                    @include medium;
+                    margin-bottom: 34px;
+                    text-transform: uppercase;
+                    color: white;
+                }
+                .line-white{
+                    @include line;
+                    margin-bottom: 34px;
+                    background-color: white;
+                }
+                .main-block-text{
+                    font: {
+                        family: $main-font;
+                        size: 14px;
+                    }
+                    @include medium;
+                    color: white;
+                    opacity: 0.8;
+                }
+                button{
+                    color: white;
+                    background-color: transparent;
+                    border: 1px solid white;
+                    border-radius: 0;
+                    padding: 11px 26px;
+                    font: {
+                        family: $main-font;   
+                        size: 15px;
+                    }
+                    @include bold;
+                    margin-top: 57px;
+                }
+            }
+            .contact{
+                .center{
+                    text-align: center;
+
+                    .contact-title{
+                        font: {
+                            family: $special-font;
+                            size: 36px;
+                        }
+                        @include medium;
+                        margin-bottom: 34px;
+                        text-transform: uppercase;
+                        margin-top: 80px;
+                    }
+                    .line-red{
+                        @include line;
+                        background-color: $red;
+                        margin-bottom: 34px;
+                    }
+                    .contact-text{
+                        font: {
+                            family: $main-font;
+                            size: 14px;
+                        }
+                        @include medium;
+                        color: #86878B;
+                        margin-bottom: 95px;
+                    }
+                }
+                .all-reg{
+                    @include space-between;
+                    align-items: flex-start;
+
+                    .reg-block{
+                        margin-left: 80px;
+
+                        input{
+                            color: #BDBDBD;
+                            border: {
+                                top: none;
+                                left: none;
+                                right: none;
+                                radius: 0;
+                            }
+                            padding-bottom: 30px;
+                            width: 478px;
+                            margin-bottom: 35px;
+                        }
+                    }
+                    .mess{
+                        margin-right: 80px;
+
+                        input{
+                            color: #BDBDBD;
+                            border: {
+                                top: none;
+                                left: none;
+                                right: none;
+                                radius: 0;
+                            }
+                            padding-bottom: 198.5px;
+                            width: 478px;
+                        }
+                    }
+                }
+                .center{
+                    button{
+                        margin: {
+                            top: 68px;
+                            bottom: 44px;
+                        }
+                        background-color: #EC7979;
+                        color: white;
+                        font: {
+                            family: $main-font;
+                            size: 15px;
+                        }
+                        @include bold;
+                        border: none;
+                        padding: 11px 25px;
+                        border-radius: 0;
+                    }
+                }
+            }
+        }
+        footer{
+            background-color: black;
+            padding-top: 30px;
+            padding-bottom: 15px;
+            .networks{
+                display: flex;
+                justify-content: center;
+                font-size: 23px;
+                .networks-icons{
+                    margin-right: 30px;
+                    color: #CCCCCC;
+                }
+            }
+            .copyright{
+                color: white;
+                opacity: 50%;
+                font: {
+                    size: 12px;
+                    family: $main-font;
+                }
+                text-align: center;
+                padding-top: 18px;
+                padding-bottom: 15px;
+            }
+        }
+    }  
+      
+}
